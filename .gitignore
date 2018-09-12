@@ -1,0 +1,12 @@
+/.idea
+
+# Setuptools stuff
+build/
+dist/
+pytest_cobra.egg-info/
+
+# Python stuff
+__pycache__/
+
+# py.test stuff
+.pytest_cache/
