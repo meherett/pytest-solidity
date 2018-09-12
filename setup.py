@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="pytest-cobra",
-    version='0.0.2.dev1',
+    version='0.0.2',
     description='PyTest plugin for testing Smart Contracts for Ethereum blockchain.',
     long_description='TODO',
     license='MIT',
