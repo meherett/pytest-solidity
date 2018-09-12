@@ -61,22 +61,6 @@ class CobraTester:
         self.ethereum_tester.mine_blocks(number)
 
 
-class CobraAccount(str):
-    def __new__(cls, w3: Web3, address):
-        obj = super().__new__(cls, address)
-        obj._w3 = w3
-        obj._address = address
-        return obj
-
-    # Send Ether
-    def transfer(self, address, amount):
-        self._w3.eth.sendTransaction({'to': address, 'from': self._address, 'value': amount})
-
-    @property
-    def balance(self):
-        return self._w3.eth.getBalance(self._address)
-
-
 class CobraLog(Mapping):
     def __new__(cls, event, args):
         obj = super().__new__(cls)
@@ -213,6 +197,22 @@ class CobraFactory:
                 if not isinstance(value, str) or not isinstance(value, int):
                     cleaned_modifiers[name][key] = str(value)
         return cleaned_modifiers
+
+
+class CobraAccount(str):
+    def __new__(cls, w3: Web3, address):
+        obj = super().__new__(cls, address)
+        obj._w3 = w3
+        obj._address = address
+        return obj
+
+    # Send Ether
+    def transfer(self, address, amount):
+        self._w3.eth.sendTransaction({'to': address, 'from': self._address, 'value': amount})
+
+    @property
+    def balance(self):
+        return self._w3.eth.getBalance(self._address)
 
 
 class CobraFailureHandler:
