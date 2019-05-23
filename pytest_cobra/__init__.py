@@ -575,7 +575,9 @@ def cobra_file(pytestconfig):
     cobra_file = dict()
     if pytestconfig.option.cobra:
         cobra_interface = CobraInterfaces(web3)
-        cobra_file = cobra_interface.cobra_file(pytestconfig.option.cobra, pytestconfig.option.import_remappings)
+        cobra_file = cobra_interface.cobra_file(pytestconfig.option.cobra,
+                                                pytestconfig.option.import_remappings,
+                                                pytestconfig.option.allow_paths)
     return cobra_file
 
 
