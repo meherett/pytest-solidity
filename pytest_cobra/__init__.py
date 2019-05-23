@@ -449,19 +449,19 @@ class CobraInterfaces(CobraConfiguration):
         self.web3 = _web3
         self.contracts = dict()
 
-    def cobra_file(self, file_name, import_remapping=None):
-        import_remappings = ["=", "-"]
-        if import_remapping is not None:
-            for remapping in import_remapping:
-                if not remapping.startswith("="):
-                    import_remappings.append("=" + remapping)
+    def cobra_file(self, file_name, import_remappings=None):
+        importRemappings = ["=", "-"]
+        if import_remappings is not None:
+            for import_remapping in import_remappings:
+                if not import_remapping.startswith("="):
+                    importRemappings.append("=" + import_remapping)
                 else:
-                    import_remappings.append(remapping)
+                    importRemappings.append(import_remapping)
 
         if file_name.endswith(".sol"):
             compiled_json = compile_source(
                 self.file_reader(file_name),
-                import_remappings=import_remappings)
+                import_remappings=importRemappings)
             convert_json = self.cobra_converter(compiled_json)
             self.cobra_test_json(convert_json)
 
@@ -561,8 +561,8 @@ def pytest_addoption(parser):
     group = parser.getgroup('Cobra', 'Ethereum Smart-Contract testing support')
     group.addoption('--cobra', action='store', default=None, metavar='path',
                     help='pytest --cobra Contract.json')
-    group.addoption('--remapping', action='store', default=None, metavar='path',
-                    help='pytest --cobra Contract.sol --remapping ["/home/meherett"]')
+    group.addoption('--import_remappings', action='store', default=None, metavar='path',
+                    help='pytest --cobra Contract.sol --import_remappings ["/home/meherett"]')
 
 
 @pytest.fixture(scope='session')
@@ -570,7 +570,7 @@ def cobra_file(pytestconfig):
     cobra_file = dict()
     if pytestconfig.option.cobra:
         cobra_interface = CobraInterfaces(web3)
-        cobra_file = cobra_interface.cobra_file(pytestconfig.option.cobra, pytestconfig.option.remapping)
+        cobra_file = cobra_interface.cobra_file(pytestconfig.option.cobra, pytestconfig.option.import_remappings)
     return cobra_file
 
 
