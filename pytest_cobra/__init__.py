@@ -14,6 +14,7 @@ from web3 import Web3
 import pytest
 import json
 import yaml
+import os
 
 
 class CobraTester:
@@ -449,19 +450,20 @@ class CobraInterfaces(CobraConfiguration):
         self.web3 = _web3
         self.contracts = dict()
 
-    def cobra_file(self, file_name, import_remappings=None):
-        importRemappings = ["=", "-"]
-        if import_remappings is not None:
-            for import_remapping in import_remappings:
-                if not import_remapping.startswith("="):
-                    importRemappings.append("=" + import_remapping)
-                else:
-                    importRemappings.append(import_remapping)
+    def cobra_file(self, file_name, import_remappings=None, allow_paths=None):
+        # Import remapping None to empty array
+        if import_remappings is None:
+            import_remappings = []
+
+        # Allow path None to current working directory path
+        if allow_paths is None:
+            allow_paths = str(os.getcwd())
 
         if file_name.endswith(".sol"):
             compiled_json = compile_source(
                 self.file_reader(file_name),
-                import_remappings=importRemappings)
+                import_remappings=import_remappings,
+                allow_paths=allow_paths)
             convert_json = self.cobra_converter(compiled_json)
             self.cobra_test_json(convert_json)
 
@@ -477,7 +479,7 @@ class CobraInterfaces(CobraConfiguration):
             self.cobra_test_yaml(load_yaml)
         else:
             with pytest.raises(FileNotFoundError,
-                               message="[Cobra] Can't find this type of extension ['.sol', '.json' or '.yaml']"):
+                               message="[ERROR] Can't find this type of extension ['.sol', '.json' or '.yaml']"):
                 pass
         return self.contracts
 
