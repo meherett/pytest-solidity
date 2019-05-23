@@ -565,7 +565,9 @@ def pytest_addoption(parser):
     group.addoption('--cobra', action='store', default=None, metavar='path',
                     help='pytest --cobra Contract.json')
     group.addoption('--import_remappings', action='store', default=None, metavar='path',
-                    help='pytest --cobra Contract.sol --import_remappings ["/home/meherett"]')
+                    help='pytest --cobra Contract.sol --import_remappings ["=", "-", "=/home"]')
+    group.addoption('--allow_paths', action='store', default=None, metavar='path',
+                    help='pytest --cobra Contract.sol --allow_paths ["/home"]')
 
 
 @pytest.fixture(scope='session')
