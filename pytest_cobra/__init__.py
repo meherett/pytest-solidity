@@ -459,6 +459,7 @@ class CobraInterfaces(CobraConfiguration):
         if allow_paths is None:
             allow_paths = str(os.getcwd())
 
+        # Fetching solidity file extension
         if file_name.endswith(".sol"):
             compiled_json = compile_source(
                 self.file_reader(file_name),
@@ -466,13 +467,13 @@ class CobraInterfaces(CobraConfiguration):
                 allow_paths=allow_paths)
             convert_json = self.cobra_converter(compiled_json)
             self.cobra_test_json(convert_json)
-
+        # Fetching compiled json file extension
         elif file_name.endswith(".json"):
             read_json = self.file_reader(file_name)
             load_json = self.json_loader(read_json)
             convert_json = self.cobra_converter(load_json)
             self.cobra_test_json(convert_json)
-
+        # Fetching yaml from cobra framework file extension
         elif file_name.endswith(".yaml"):
             read_yaml = self.file_reader(file_name)
             load_yaml = self.yaml_loader(read_yaml)
