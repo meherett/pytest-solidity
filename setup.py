@@ -12,7 +12,7 @@ setup(
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
     url='https://github.com/Cobraframework/pytest-cobra',
-    python_requires='>=3.5,<3.7',
+    python_requires='>=3.5.3,<3.8',
     packages=['pytest_cobra'],
     install_requires=[
         'pytest>=3.7.1,<4.0.0',
