@@ -1,4 +1,5 @@
 /.idea
+/.tox
 
 # Setuptools stuff
 build/
