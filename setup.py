@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setup(
     name="pytest-cobra",
-    version='1.0.0.dev1',
+    version='1.0.a1',
     description='PyTest plugin for testing Smart Contracts for Ethereum blockchain.',
     long_description=long_description,
     license='MIT',
@@ -26,7 +26,7 @@ setup(
         ]
     },
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 1 - Alpha",
         "License :: OSI Approved :: MIT License",
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
