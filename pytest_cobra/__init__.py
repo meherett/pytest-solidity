@@ -457,7 +457,7 @@ class CobraInterfaces(CobraConfiguration):
 
         # Allow path None to current working directory path
         if allow_paths is None:
-            allow_paths = str(os.getcwd())
+            allow_paths = str()
 
         # Fetching solidity file extension
         if file_name.endswith(".sol"):
