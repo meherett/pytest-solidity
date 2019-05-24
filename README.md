@@ -37,39 +37,53 @@ pip install pytest-cobra
 
 ## Usage
 
-###### Execute your test suite
-
-#### 1: Testing from Solidity file (.sol)
+###### Cobra test suit
 
 ```
-pytest --cobra Contracts.sol
+# MetaCoin Testing
+
+# cobra is pytest fixture
+def test_metacoin(cobra):
+    # Getting Contract Factory by name
+    metacoin = cobra.contract('MetaCoin')
+    # Getting Contract Instance of MetaCoin
+    metacoin = metacoin.deploy()
+
+    assert metacoin.getBalance(cobra.accounts[0]) == 10000
+```
+
+###### Execute your test suite
+
+#### Run testing from Solidity file (.sol)
+
+```
+pytest --cobra MetaCoin.sol
 ```
 
 #### Optional commands
 
 ##### import_remappings
 ```
-pytest --cobra Contracts.sol --import_remappings "=,-,=/home"
+pytest --cobra MetaCoin.sol --import_remappings "=,-,=/home"
 ```
 
 ##### allow_paths
 ```
-pytest --cobra Contracts.sol --allow_paths "/home/meheret,/user,/"
+pytest --cobra MetaCoin.sol --allow_paths "/home/meheret,/user,/"
 ```
 
-#### 2: Testing from compiled Contracts Json file (.json)
+#### Run testing from compiled Contracts Json file (.json)
 
-##### Compile your contracts into a package (soon to be ethPM-compliant)
+Compile your contracts into a package (soon to be ethPM-compliant)
 ```
-solc --combined-json abi,bin,bin-runtime contracts/ > Contracts.json
+solc --combined-json abi,bin,bin-runtime contracts/ > MetaCoin.json
+```
+Testing Contracts.json
+```
+pytest --cobra MetaCoin.json
 ```
 
-##### Testing Contracts.json
-```
-pytest --cobra Contracts.json
-```
-
-#### 3: Testing from cobra.yaml file (.yaml) 
+#### Run testing from cobra.yaml file (.yaml) 
 ```Comming soon with Cobra Framework```
 
 ## Further help
