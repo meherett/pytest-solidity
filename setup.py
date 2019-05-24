@@ -1,10 +1,13 @@
 from setuptools import setup
 
+with open("README.md", "r") as readme:
+    long_description = readme.read()
+
 setup(
     name="pytest-cobra",
-    version='0.0.2',
+    version='1.0.0.dev1',
     description='PyTest plugin for testing Smart Contracts for Ethereum blockchain.',
-    long_description='TODO',
+    long_description=long_description,
     license='MIT',
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
