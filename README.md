@@ -104,4 +104,4 @@ pytest --cobra MetaCoin.json
 Go check out the [PyTest](http://pytest.org).
 
 ## Author
-##### # Meheret Tesfaye [@meherett](http://github.com/meherett).
+##### # MEHERET TESFAYE [@meherett](http://github.com/meherett).
