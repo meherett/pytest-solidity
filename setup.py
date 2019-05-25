@@ -12,7 +12,7 @@ setup(
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
     url='https://github.com/Cobraframework/pytest-cobra',
-    python_requires='>=3.5.3,<3.8',
+    python_requires='>=3.6,<3.8',
     packages=['pytest_cobra'],
     install_requires=[
         'pytest>=3.7.1,<4.0.0',
@@ -33,7 +33,6 @@ setup(
     classifiers=[
         "Development Status :: 1 - Alpha",
         "License :: OSI Approved :: MIT License",
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         "Framework :: Pytest",
