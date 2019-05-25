@@ -11,6 +11,7 @@ setup(
     version='1.0.0a1',
     description='PyTest plugin for testing Smart Contracts for Ethereum blockchain.',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     license='MIT',
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
