@@ -16,7 +16,12 @@ setup(
     packages=['pytest_cobra'],
     install_requires=[
         'pytest>=3.7.1,<4.0.0',
-        'eth-tester[py-evm]>=0.1.0-beta.28,<0.2.0',
+        'eth-keyfile==0.5.1',
+        'eth-tester==0.1.0b33',
+        'py-evm==0.2.0a33',
+        'eth-abi==1.2.2',
+        'py-ecc==1.4.3',
+        'py-solc>=3.2.0,<4.0.0',
         'web3>=4.4.1,<5.0.0',
         'PyYAML>=3.13,<4.0'
     ],
