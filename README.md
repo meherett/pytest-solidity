@@ -8,24 +8,26 @@
 
 ![GitHub License](https://img.shields.io/github/license/cobraframework/pytest-cobra.svg)
 ![PyPI Version](https://img.shields.io/pypi/v/pytest-cobra.svg?color=blue)
-![PyPI Version](https://img.shields.io/github/release-date/cobraframework/pytest-cobra.svg)
-![PyPI Wheel](https://img.shields.io/pypi/wheel/pytest-cobra.svg)
+![Github Date](https://img.shields.io/github/release-date/cobraframework/pytest-cobra.svg)
+![PyPI Wheel](https://img.shields.io/pypi/wheel/pytest-cobra.svg?color=%2308490e)
+[![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0xD32AAEDF28A848e21040B6F643861A9077F83106)](https://en.cryptobadges.io/donate/0xD32AAEDF28A848e21040B6F643861A9077F83106)
 
 ## Requirements
 
-#### Step 1: Install solc
+#### Step 1: Install Solidity compiler(solc)
 
+Using Node Package  Manager(npm)
 ```
 npm install -g solc
 ```
-##### or for Ubuntu(Linux)
+or for Ubuntu(Linux)
 ```
 sudo add-apt-repository ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install solc
 ```
 
-#### Step 2: Install PyTest
+#### Step 2: Install PyTest Framework
 ```bash
 pip install -U pytest
 ```
@@ -37,22 +39,23 @@ pip install pytest-cobra
 
 ## Usage
 
-###### Cobra test suit
+###### Execute your test suite
+##### Example MetaCoin
 
 ```
 # MetaCoin Testing
 
 # cobra is pytest fixture
 def test_metacoin(cobra):
+
     # Getting Contract Factory by name
     metacoin = cobra.contract('MetaCoin')
+    
     # Getting Contract Instance of MetaCoin
     metacoin = metacoin.deploy()
 
     assert metacoin.getBalance(cobra.accounts[0]) == 10000
 ```
-
-###### Execute your test suite
 
 #### Run testing from Solidity file (.sol)
 
@@ -62,12 +65,12 @@ pytest --cobra MetaCoin.sol
 
 #### Optional commands
 
-##### import_remappings
+import_remappings
 ```
 pytest --cobra MetaCoin.sol --import_remappings "=,-,=/home"
 ```
 
-##### allow_paths
+allow_paths
 ```
 pytest --cobra MetaCoin.sol --allow_paths "/home/meheret,/user,/"
 ```
@@ -92,7 +95,3 @@ Go check out the [PyTest](http://pytest.org).
 
 ## Author
 ##### # Meheret Tesfaye [@meherett](http://github.com/meherett).
-
-## Donation
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)](https://en.cryptobadges.io/donate/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)
-[![Donate with Ethereum](https://en.cryptobadges.io/badge/big/0xD32AAEDF28A848e21040B6F643861A9077F83106)](https://en.cryptobadges.io/donate/0xD32AAEDF28A848e21040B6F643861A9077F83106)
