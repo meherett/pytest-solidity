@@ -5,13 +5,13 @@ with open("README.md", "r") as readme:
 
 setup(
     name="pytest-cobra",
-    version='1.0.a1',
+    version='1.0a1',
     description='PyTest plugin for testing Smart Contracts for Ethereum blockchain.',
     long_description=long_description,
     license='MIT',
     author='Meheret Tesfaye',
     author_email='meherett@zoho.com',
-    url='https://github.com/Cobraframework/pytest-cobra',
+    url='https://github.com/cobraframework/pytest-cobra',
     python_requires='>=3.6,<3.8',
     packages=['pytest_cobra'],
     install_requires=[
