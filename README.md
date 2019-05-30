@@ -51,7 +51,7 @@ pip install -e . -r requirements.txt
  Example MetaCoin
  [picture](https://github.com/cobraframework/pytest-cobra/blob/master/example/example.png)
 
-```
+```python
 # MetaCoin Testing
 
 # cobra is pytest fixture
