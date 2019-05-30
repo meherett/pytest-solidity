@@ -103,5 +103,11 @@ pytest --cobra MetaCoin.json
 ##### PyTest
 Go check out the [PyTest](http://pytest.org).
 
-## Author
-##### # MEHERET TESFAYE [@meherett](http://github.com/meherett).
+## Author ✒️
+
+* **Meheret Tesfaye** - *Initial work* - [Cobra](https://github.com/cobraframework)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
