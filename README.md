@@ -1,4 +1,4 @@
-<p align="center">		
+<p align="center">	
   <img src="https://raw.githubusercontent.com/Cobraframework/pytest-cobra/master/pytest-cobra.png">		
 </p>
 
