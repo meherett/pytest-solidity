@@ -273,27 +273,27 @@ class CobraConfiguration:
     def config_test_yaml(self, test_yaml):
         yaml_test = []
         try:
-            if test_yaml['artifact_path_dir'] and test_yaml['contracts']:
+            if test_yaml['artifact_path'] and test_yaml['contracts']:
                 for contract in test_yaml['contracts']:
                     try:
                         if contract['contract']['artifact']:
                             try:
                                 if contract['contract']['links']:
                                     yaml_test.append(dict(
-                                        artifact_path_dir=test_yaml['artifact_path_dir'],
+                                        artifact_path=test_yaml['artifact_path'],
                                         artifact=contract['contract']['artifact'],
                                         links=contract['contract']['links']
                                     ))
                                 elif not contract['contract']['links']:
                                     yaml_test.append(dict(
-                                        artifact_path_dir=test_yaml['artifact_path_dir'],
+                                        artifact_path=test_yaml['artifact_path'],
                                         artifact=contract['contract']['artifact'],
                                         links=None
                                     ))
                                     continue
                             except KeyError:
                                 yaml_test.append(dict(
-                                    artifact_path_dir=test_yaml['artifact_path_dir'],
+                                    artifact_path=test_yaml['artifact_path'],
                                     artifact=contract['contract']['artifact'],
                                     links=None
                                 ))
@@ -303,7 +303,7 @@ class CobraConfiguration:
                             pass
         except TypeError:
             with pytest.raises(FileNotFoundError,
-                               message="[Cobra] Can't find artifact_path_dir or contracts in test [.yaml]"):
+                               message="[Cobra] Can't find artifact_path or contracts in test [.yaml]"):
                 pass
         return yaml_test
 
@@ -498,7 +498,7 @@ class CobraInterfaces(CobraConfiguration):
             load_yaml_test = load_yaml['test']
             configurations_yaml = self.config_test_yaml(load_yaml_test)
             for configuration_yaml in configurations_yaml:
-                file_path_json = join(configuration_yaml['artifact_path_dir'], configuration_yaml['artifact'])
+                file_path_json = join(configuration_yaml['artifact_path'], configuration_yaml['artifact'])
                 read_json = self.file_reader(file_path_json)
                 load_json = self.yaml_loader(read_json)
                 if configuration_yaml['links'] is None:
