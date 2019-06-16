@@ -10,7 +10,6 @@
 ![PyPI Version](https://img.shields.io/pypi/v/pytest-cobra.svg?color=blue)
 ![Github Date](https://img.shields.io/github/release-date/cobraframework/pytest-cobra.svg)
 ![PyPI Wheel](https://img.shields.io/pypi/wheel/pytest-cobra.svg?color=%2308490e)
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)](https://en.cryptobadges.io/donate/3JiPsp6bT6PkXF3f9yZsL5hrdQwtVuXXAk)
 [![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0xD32AAEDF28A848e21040B6F643861A9077F83106)](https://en.cryptobadges.io/donate/0xD32AAEDF28A848e21040B6F643861A9077F83106)
 
 ## Dependency
