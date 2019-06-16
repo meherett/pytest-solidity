@@ -8,7 +8,7 @@ with open(os.path.join(base_dir, "README.md"), "r") as readme:
 
 setup(
     name="pytest-cobra",
-    version='1.0.0',
+    version='1.0.1',
     description='PyTest plugin for testing Smart Contracts for Ethereum blockchain.',
     long_description=long_description,
     long_description_content_type="text/markdown",
