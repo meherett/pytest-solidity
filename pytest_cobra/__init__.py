@@ -461,9 +461,11 @@ class CobraInterfaces(CobraConfiguration):
 
         # Fetching solidity file extension
         if file_name.endswith(".sol"):
+            _import_remappings = ["-"]
+            _import_remappings.extend(import_remappings)
             compiled_json = compile_source(
                 self.file_reader(file_name),
-                import_remappings=import_remappings,
+                import_remappings=_import_remappings,
                 allow_paths=allow_paths)
             convert_json = self.cobra_converter(compiled_json)
             self.cobra_test_json(convert_json)
