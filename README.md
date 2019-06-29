@@ -7,9 +7,9 @@
 *PyTest plugin for testing Smart Contracts for Ethereum blockchain.*
 
 [![Build Status](https://travis-ci.com/cobraframework/pytest-cobra.svg?branch=master)](https://travis-ci.com/cobraframework/pytest-cobra)
-![GitHub License](https://img.shields.io/github/license/cobraframework/pytest-cobra.svg)
 ![PyPI Version](https://img.shields.io/pypi/v/pytest-cobra.svg?color=blue)
-![Github Date](https://img.shields.io/github/release-date/cobraframework/pytest-cobra.svg)
+![GitHub License](https://img.shields.io/github/license/cobraframework/pytest-cobra.svg)
+![Github Date](https://img.shields.io/github/release-date/cobraframework/pytest-cobra.svg?color=black)
 ![PyPI Wheel](https://img.shields.io/pypi/wheel/pytest-cobra.svg?color=%2308490e)
 [![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0xD32AAEDF28A848e21040B6F643861A9077F83106)](https://en.cryptobadges.io/donate/0xD32AAEDF28A848e21040B6F643861A9077F83106)
 
