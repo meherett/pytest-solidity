@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-//import "./ConvertLib.sol";
-import "/home/meheret/PycharmProjects/pytest-cobra/example/ConvertLib.sol";
+//import "toxinidir/example/ConvertLib.sol";
+import "/home/travis/build/cobraframework/pytest-cobra/example/ConvertLib.sol";
 
 // This is just a simple example of a coin-like contract.
 // It is not standards compatible and cannot be expected to talk to other
