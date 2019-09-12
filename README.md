@@ -97,7 +97,17 @@ pytest --cobra MetaCoin.json
 ```
 
 ### Running test from Yaml file (.yaml) 
-`Comming Soon` with Cobra Framework
+```yaml
+test:
+  artifact_path: "./build/contracts/"
+  test_paths: ["./tests"]
+  contracts: [
+    contract: {
+        artifact: "Contract.json",
+        links: ["Contract.json"]
+    }
+  ]
+```
 
 ## Further help
 ##### PyTest
