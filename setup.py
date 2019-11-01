@@ -27,7 +27,7 @@ setup(
         'py-ecc==1.4.3',
         'py-solc>=3.2.0,<4.0.0',
         'web3>=4.4.1,<5.0.0',
-        'PyYAML>=3.13,<4.0'
+        'PyYAML>=3.13,<6.0'
     ],
     entry_points={
         'pytest11': [
