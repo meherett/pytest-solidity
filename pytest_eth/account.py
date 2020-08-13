@@ -4,7 +4,7 @@ from web3 import Web3
 from eth_typing import Address
 
 
-class Account(Address):
+class Account(str):
     
     def __new__(cls, web3: Web3, address: Address):
         obj = super().__new__(cls, address)
