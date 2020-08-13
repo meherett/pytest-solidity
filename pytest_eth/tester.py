@@ -5,6 +5,7 @@ from eth_tester import EthereumTester
 from json import loads
 
 from .account import Account
+from .handler import FailureHandler
 from .factory import Factory
 
 
